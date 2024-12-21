@@ -1,6 +1,11 @@
-- name: Hello World Testing
-  hosts: all
+- name: Print a test message and create a file
+  hosts: localhost
   tasks:
-    - name: Hello Message
+    - name: Print a test message
       debug:
-        msg: "Hello Testing 123..."
+        msg: "Test Message: This is a test!"
+
+    - name: Create a test file
+      file:
+        path: /tmp/testfile.txt
+        state: touch
