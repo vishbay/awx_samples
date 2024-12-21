@@ -1,0 +1,19 @@
+---
+- name: Get Kubernetes Pod Details
+  hosts: localhost
+  tasks:
+    - name: Get Pod Name
+      debug:
+        msg: "Pod Name: {{ lookup('env', 'MY_POD_NAME') }}"
+
+    - name: Get Namespace
+      debug:
+        msg: "Namespace: {{ lookup('env', 'MY_POD_NAMESPACE') }}"
+
+    - name: Get Node Name
+      debug:
+        msg: "Node Name: {{ lookup('env', 'MY_NODE_NAME') }}"
+
+    - name: Get Pod IP
+      debug:
+        msg: "Pod IP: {{ lookup('env', 'MY_POD_IP') }}"
